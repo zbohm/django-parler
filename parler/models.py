@@ -455,7 +455,7 @@ class TranslatableModelMixin(object):
         if not language_code:
             language_code = self._current_language
             if language_code is None:
-                raise ValueError(get_null_language_error())
+                language_code = settings.LANGUAGE_CODE
 
         if meta is None:
             meta = self._parler_meta.root  # work on base model by default
